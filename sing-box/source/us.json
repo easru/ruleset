@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "rules": [
+    {
+      "domain": [
+        "ai.google.dev",
+        "gateway.ai.cloudflare.com",
+        "alkalicore-pa.clients6.google.com",
+        "jules.google.com",
+        "api.github.com"
+      ],
+      "domain_suffix": [
+        "oaistatic.com",
+        "anthropic.com",
+        "deepmind.com",
+        "chatgpt.com",
+        "sora.com",
+        "groq.com",
+        "grok.com",
+        "chat.com",
+        "poe.com",
+        "ai.com",
+        "clipdrop.co",
+        "perplexity.ai",
+        "openart.ai",
+        "jasper.ai",
+        "claude.ai",
+        "meta.ai",
+        "dify.ai",
+        "x.ai",
+		"youtube.com"
+      ],
+      "domain_keyword": ["openai", "alkalimakersuite-pa.clients6.google.com", "google"]
+    }
+  ]
+}
