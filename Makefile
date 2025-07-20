@@ -28,8 +28,9 @@ $(eval $(IP_URLS_MAP))
 
 SINGBOX_SRS_TARGETS := $(patsubst %, $(SINGBOX_SRS_DIR)/%.srs, $(IP_TYPES))
 SINGBOX_SOURCE_TARGETS := $(patsubst %, $(SINGBOX_SOURCE_DIR)/%.json, $(IP_TYPES))
+IPSET_TARGETS := $(patsubst %, $(IPSET_DIR)/%.txt, $(IP_TYPES))
 
-all: $(SINGBOX_SRS_TARGETS)
+all: $(SINGBOX_SRS_TARGETS) $(SINGBOX_SOURCE_TARGETS) $(IPSET_TARGETS)
 
 .PHONY: FORCE
 
@@ -56,6 +57,12 @@ $(SINGBOX_SOURCE_DIR)/%.json: $(DATA_DIR)/%
 	@echo "--- Creating $(notdir $@) ---"
 	@mkdir -p $(@D)
 	$(IP_TO_SINGBOX_SOURCE) $< $@
+
+$(IPSET_DIR)/%.txt: $(DATA_DIR)/%
+	@echo "--- [ipset] Creating $(notdir $@) ---"
+	@mkdir -p $(@D)
+	cp $< $@
+
 
 clean:
 	@rm -rf $(DATA_DIR)
